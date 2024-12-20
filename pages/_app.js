@@ -1,5 +1,20 @@
-import "@/styles/globals.css";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { ApolloProvider } from "@apollo/client";
+import client from "./client";
+import NavBar from "./NavBar";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+import "../styles/globals.css"; // Global CSS
+
+function MyApp({ Component, pageProps }) {
+
+
+  return (
+    <ApolloProvider client={client}>
+      <NavBar />
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
+
+export default MyApp;
