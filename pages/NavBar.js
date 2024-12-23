@@ -7,12 +7,7 @@ const NavBar = () => {
       <Link href="/" passHref>
         Home
       </Link>
-      <Link href="/postpage" passHref>
-        Post Page
-      </Link>
-      <Link href="/userprofile" passHref>
-        User Profile
-      </Link>
+
     </nav>
   );
 };

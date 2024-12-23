@@ -37,7 +37,7 @@ function Home({ todos }) {
   const filteredTodos = todos.filter(
     (todo) =>
       todo?.user?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      todo?.user?.email?.toLowerCase().includes(searchTerm.toLowerCase())
+      todo?.user?.email?.toLowerCase().includes(searchTerm.toLowerCase()) 
   );
 
   return (
@@ -53,6 +53,7 @@ function Home({ todos }) {
         <thead>
           <tr>
             <th>User</th>
+            <th>Title</th>
             <th>Email</th>
             <th>Content</th>
             <th>Comments</th>
@@ -63,6 +64,7 @@ function Home({ todos }) {
           {filteredTodos.map((todo) => (
             <tr key={todo.id} className="todo-row">
               <td>{todo?.user?.name || "N/A"}</td>
+              <td>{todo?.title}</td>
               <td>{todo?.user?.email || "N/A"}</td>
               <td>{todo.content}</td>
               <td>{todo.comments}</td>
@@ -71,13 +73,6 @@ function Home({ todos }) {
           ))}
         </tbody>
       </table>
-
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} Community-Feed Application. All Rights Reserved.</p>
-        <p>
-          Created by <a href="https://github.com/SohanRout2023" target="_blank" rel="noopener noreferrer">Sohan Kumar Rout</a>
-        </p>
-      </footer>
     </div>
   );
 }
